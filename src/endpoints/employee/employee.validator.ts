@@ -10,10 +10,56 @@ export const CreateEmployeeValidator: Schema = {
             errorMessage: 'Employee Name must be a string',
         }
     },
+    exam_Id: {
+        in: 'body',
+        exists: {
+            errorMessage: 'Exam ID is required',
+        },
+        isInt: {
+            errorMessage: 'Exam ID must be an integer',
+        }
+    },
+    exam_Name: {
+        in: 'body',
+        exists: {
+            errorMessage: 'Exam Name is required',
+        },
+        isString: {
+            errorMessage: 'Exam Name must be a string',
+        }
+    },
+};
+
+export const GetEmployeeValidator: Schema = {
+    id: {
+        in: 'params',
+        exists: {
+            errorMessage: 'Employee ID is required',
+        },
+        isInt: {
+            errorMessage: 'Employee ID must be an integer',
+        }
+    }
+};
+
+
+export const UpdateEmployeeDetailsValidator: Schema = {
+    id: {
+        in: 'params',
+        exists: {
+            errorMessage: 'Employee ID is required',
+        },
+        isInt: {
+            errorMessage: 'Employee ID must be an integer',
+        },
+    },
     score: {
         in: 'body',
         exists: {
             errorMessage: 'Score is required',
+        },
+        isInt: {
+            errorMessage: 'Score must be an integer',
         }
     },
     result: {
@@ -36,7 +82,8 @@ export const CreateEmployeeValidator: Schema = {
     }
 };
 
-export const GetEmployeeValidator: Schema = {
+
+export const DeleteEmployeeDetailsValidator: Schema = {
     id: {
         in: 'params',
         exists: {

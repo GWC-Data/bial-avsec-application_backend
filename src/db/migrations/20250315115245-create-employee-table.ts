@@ -12,17 +12,29 @@ export async function up(queryInterface: QueryInterface): Promise<void> {
       type: DataTypes.STRING,
       allowNull: false,
     },
-    score: {
+    exam_Id: {
       type: DataTypes.INTEGER,
       allowNull: false,
     },
-    result: {
+    exam_Name: {
       type: DataTypes.STRING,
       allowNull: false,
     },
+    date: {
+      type: DataTypes.DATEONLY,
+      allowNull: false,
+    },
+    score: {
+      type: DataTypes.INTEGER,
+      allowNull: true,
+    },
+    result: {
+      type: DataTypes.STRING,
+      allowNull: true,
+    },
     certificate: {
       type: DataTypes.TEXT('long'),
-      allowNull: false,
+      allowNull: true,
     },
     createdAt: {
       type: DataTypes.DATE,
@@ -39,7 +51,7 @@ export async function up(queryInterface: QueryInterface): Promise<void> {
     MODIFY createdAt TIMESTAMP DEFAULT CURRENT_TIMESTAMP NOT NULL,
     MODIFY updatedAt TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP NOT NULL;
 `)
-}  
+}
 
 export async function down(queryInterface: QueryInterface): Promise<void> {
   // Drop the 'Employee' table

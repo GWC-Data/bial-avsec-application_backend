@@ -5,12 +5,16 @@ import {
 } from "node-server-engine";
 import { 
    CreateEmployeeValidator,
-   GetEmployeeValidator 
+   GetEmployeeValidator ,
+   UpdateEmployeeDetailsValidator,
+   DeleteEmployeeDetailsValidator
 } from "./employee.validator";
 import {
    getAllEmployeeDetailsHandler,
    createEmployeeDetailsHandler,
-   getEmployeeDetailsByIdHandler
+   getEmployeeDetailsByIdHandler,
+   updateEmployeeDetailsHandler,
+   deleteEmployeeDetailsHandler
 } from './employee.handler';
 
 
@@ -36,4 +40,21 @@ export const getEmployeeDetailsByIdEndpoint = new Endpoint({
     handler: getEmployeeDetailsByIdHandler,
     authType: EndpointAuthType.NONE,
     validator: GetEmployeeValidator
+});
+
+export const updateEmployeeDetailsEndpoint = new Endpoint({
+    path: '/employee/:id',
+    method: EndpointMethod.PUT,
+    handler: updateEmployeeDetailsHandler,
+    authType: EndpointAuthType.NONE,
+    validator: UpdateEmployeeDetailsValidator
+});
+
+
+export const deleteEmployeeDetailsEndpoint = new Endpoint({
+    path: '/employee/:id',
+    method: EndpointMethod.DELETE,
+    handler: deleteEmployeeDetailsHandler,
+    authType: EndpointAuthType.NONE,
+    validator: DeleteEmployeeDetailsValidator
 });

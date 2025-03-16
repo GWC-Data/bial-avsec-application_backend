@@ -3,7 +3,7 @@
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.getEmployeeDetailsByIdEndpoint = exports.getAllEmployeeDetailsEndpoints = exports.createEmployeeEndpoint = void 0;
+exports.updateEmployeeDetailsEndpoint = exports.getEmployeeDetailsByIdEndpoint = exports.getAllEmployeeDetailsEndpoints = exports.deleteEmployeeDetailsEndpoint = exports.createEmployeeEndpoint = void 0;
 var _nodeServerEngine = require("node-server-engine");
 var _employee = require("./employee.validator");
 var _employee2 = require("./employee.handler");
@@ -27,5 +27,19 @@ const getEmployeeDetailsByIdEndpoint = exports.getEmployeeDetailsByIdEndpoint = 
   handler: _employee2.getEmployeeDetailsByIdHandler,
   authType: _nodeServerEngine.EndpointAuthType.NONE,
   validator: _employee.GetEmployeeValidator
+});
+const updateEmployeeDetailsEndpoint = exports.updateEmployeeDetailsEndpoint = new _nodeServerEngine.Endpoint({
+  path: '/employee/:id',
+  method: _nodeServerEngine.EndpointMethod.PUT,
+  handler: _employee2.updateEmployeeDetailsHandler,
+  authType: _nodeServerEngine.EndpointAuthType.NONE,
+  validator: _employee.UpdateEmployeeDetailsValidator
+});
+const deleteEmployeeDetailsEndpoint = exports.deleteEmployeeDetailsEndpoint = new _nodeServerEngine.Endpoint({
+  path: '/employee/:id',
+  method: _nodeServerEngine.EndpointMethod.DELETE,
+  handler: _employee2.deleteEmployeeDetailsHandler,
+  authType: _nodeServerEngine.EndpointAuthType.NONE,
+  validator: _employee.DeleteEmployeeDetailsValidator
 });
 //# sourceMappingURL=employee.js.map
