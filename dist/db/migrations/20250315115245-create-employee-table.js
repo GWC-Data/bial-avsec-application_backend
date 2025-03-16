@@ -18,17 +18,29 @@ async function up(queryInterface) {
       type: _sequelize.DataTypes.STRING,
       allowNull: false
     },
-    score: {
+    exam_Id: {
       type: _sequelize.DataTypes.INTEGER,
       allowNull: false
     },
-    result: {
+    exam_Name: {
       type: _sequelize.DataTypes.STRING,
       allowNull: false
     },
+    date: {
+      type: _sequelize.DataTypes.DATEONLY,
+      allowNull: false
+    },
+    score: {
+      type: _sequelize.DataTypes.INTEGER,
+      allowNull: true
+    },
+    result: {
+      type: _sequelize.DataTypes.STRING,
+      allowNull: true
+    },
     certificate: {
       type: _sequelize.DataTypes.TEXT('long'),
-      allowNull: false
+      allowNull: true
     },
     createdAt: {
       type: _sequelize.DataTypes.DATE,
