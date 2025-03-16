@@ -24,6 +24,5 @@ export class Employee extends Model {
   @Column({ type: DataType.TEXT('long'), allowNull: true })
   certificate!: string;
 
-  ;
 }
 

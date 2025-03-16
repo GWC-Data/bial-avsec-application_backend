@@ -118,16 +118,8 @@ export const updateEmployeeDetailsHandler: EndpointHandler<EndpointAuthType.NONE
             certificate: certificate
         });
 
-        await updateEmployeeDetails.save();
+        res.status(201).json({ message: 'Employee Details successfully created ', newEmployeeDetail });
 
-        res.status(200).json({
-            message: 'Employee Details updated successfully',
-            employee_Name,
-            exam_Id,
-            exam_Name,
-            date,
-            updateEmployeeDetails
-        });
     } catch (error) {
         res.status(500).json({ message: EMPLOYEE_DETAILS_UPDATE_ERROR, error });
     }
