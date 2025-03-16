@@ -84,7 +84,7 @@ export const createEmployeeDetailsHandler: EndpointHandler<EndpointAuthType.NONE
             certificate
         });
 
-        res.status(201).json({ message: 'Employee Details created successfully', newEmployeeDetail });
+        res.status(201).json({ message: 'Employee Details successfully created ', newEmployeeDetail });
     } catch (error) {
         res.status(500).json({ message: EMPLOYEE_DETAILS_CREATION_ERROR, error });
     }
