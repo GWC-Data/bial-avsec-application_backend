@@ -1,4 +1,2 @@
-
-export * from './Employee';
-
+export * from './employee';
 export * from './sendEmailLog';
